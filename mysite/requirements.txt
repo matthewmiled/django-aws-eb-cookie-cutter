@@ -6,3 +6,4 @@ django-js-asset==1.2.3
 Pillow==9.1.0
 pytz==2022.1
 sqlparse==0.4.2
+whitenoise==5.3.0

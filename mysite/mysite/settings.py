@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '13x#p!b4x5yc2@*eagyvj-_qxbp7gt%epa7fw4h+l+)7rkcss2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['mmiles.co.uk', 'www.mmiles.co.uk', '127.0.0.1', 'django-env-699.eba-mdxq2zkw.us-west-2.elasticbeanstalk.com']
 
@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['mmiles.co.uk', 'www.mmiles.co.uk', '127.0.0.1', 'django-env-69
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,8 +139,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-CKEDITOR_UPLOAD_PATH = 'static/uploads/'
+#STATICFILES_DIRS = [
+    #os.path.join(BASE_DIR, 'static'),
+#]
+
+CKEDITOR_UPLOAD_PATH = 'static/main/img/article_photos/'
