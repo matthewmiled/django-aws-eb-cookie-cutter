@@ -78,6 +78,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
+'''
 if DEBUG == False:
     CORS_REPLACE_HTTPS_REFERER = True
     HOST_SCHEME = "https://"
@@ -90,10 +91,10 @@ if DEBUG == False:
     SECURE_HSTS_SECONDS = 1000000
     SECURE_FRAME_DENY = True
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = 'DENY'
+'''
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
