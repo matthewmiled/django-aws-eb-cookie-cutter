@@ -1,0 +1,5 @@
+{
+    "SECRET_KEY": "fdsfdsfasdgfhd6354ertyte",
+    "DEBUG": 1,
+    "ALLOWED_HOSTS": ["127.0.0.1", "django-env-6999.eba-mt3itydt.us-west-2.elasticbeanstalk.com"]
+}

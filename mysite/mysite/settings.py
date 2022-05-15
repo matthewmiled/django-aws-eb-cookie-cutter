@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import json
+
+with open('mysite/config.json') as config_file:
+    config = json.load(config_file)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +24,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fdsfdsf' #os.environ.get('SECRET_KEY')   #'13x#p!b4x5yc2@*eagyvj-_qxbp7gt%epa7fw4h+l+)7rkcss2'
+SECRET_KEY = config['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  #str(os.environ.get('DEBUG')) == '1'
+DEBUG = str(config['DEBUG']) == '1'
 
-ALLOWED_HOSTS = ['mmiles.co.uk', 'www.mmiles.co.uk', '127.0.0.1', 'django-env-699.eba-mdxq2zkw.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = config['ALLOWED_HOSTS']
 
 
 # Application definition
