@@ -6,7 +6,7 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 def get_image_path(instance, filename):
-    return os.path.join('main/img/article_photos', filename)
+    return os.path.join('static/main/img/article_photos', filename)
 
 # Create your models here.
 
