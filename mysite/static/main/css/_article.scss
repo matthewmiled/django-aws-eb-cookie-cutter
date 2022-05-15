@@ -1,0 +1,137 @@
+.articles {
+    background-color: $lightGrey;
+
+    h2 {
+        text-align: center;
+
+        @include breakpoint-up(medium){
+            text-align: left;
+        }
+    }
+}
+
+.article {
+
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.875rem;
+        color: red;
+
+        @include breakpoint-up(medium){
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include breakpoint-up(large){
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+    }
+
+    &__item {
+        border-radius: 0.3125rem;
+        overflow: hidden;
+        box-shadow: 0px 3px 12px rgba(0,0,0,0.15);
+        background-color: $white;
+        transition: all 150ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+    }
+
+    &__final {
+
+        transition: all 150ms ease-in-out;
+        position: relative;
+        font-size: 1.0625rem;
+        min-height: 10rem;
+
+        a {
+            color: $white;
+        }
+        
+    }
+
+    &__finaltext {
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        left: 50%;
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        font-size: 1.2rem;
+        background-color: $navy;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-radius: 0.2rem;
+        transition: all 150ms ease-in-out;
+
+        &:hover {
+            background-color: $cyanGrey;
+        }
+        
+    
+    }
+
+    &__image {
+        min-height: 12.5rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        img {
+            width: 100%;
+        }
+    }
+
+
+    &__text {
+        
+        padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+        color: $navyGrey;
+
+        @include breakpoint-up(medium){
+            padding: 1.875rem 1.6525rem;
+        }
+    }
+
+    &__author {
+        font-size: 0.625rem;
+        margin-bottom: 0.75rem;
+
+    }
+    
+    &__title {
+        font-size: 1.0625rem;
+        line-height: 1.2;
+        color: $navy;
+        margin-bottom: 0.5rem;
+    }
+
+    &__description {
+        font-size: 0.8125rem;
+        
+    }
+
+    &__backhome {
+        a {
+            transition: all 150ms ease-in-out;
+            color: $cyanGrey;
+
+        }
+        a:hover {
+            color: $navyGrey;
+        }
+    }
+
+    &__topic-summary {
+        color: $navyGrey;
+    }
+
+}

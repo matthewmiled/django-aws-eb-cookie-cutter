@@ -1,0 +1,63 @@
+.hero {
+    background-color: $lightGrey;
+
+    /* Only want flexbox for desktop screen sizes */
+    .container {
+
+        background-image: url('design_images/bg_light.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        @include breakpoint-up(large){
+            background-image: url('design_images/bg.jpg');
+            display: flex;
+            align-items: center;
+
+        }
+    }
+    
+
+    &__text {
+
+        h1 {
+            font-weight: bold;
+        }
+
+        span {
+            color: $cyanGrey;
+        }
+
+        p {
+            color: $navy;
+        }
+
+        .rounded-button {
+            font-size: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+            margin-right: 1rem;
+            background-color: $navy;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            transition: 300ms ease-in-out;
+        }
+
+        .rounded-button:hover {
+            background-color: $cyanGrey;
+        }
+    
+
+        @include breakpoint-up(large){
+            flex: 0.6;
+            order: 1;
+            text-align: left;
+        }
+
+    }
+}

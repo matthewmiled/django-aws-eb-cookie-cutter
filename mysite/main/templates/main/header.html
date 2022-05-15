@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django-Cookie-Cutter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link href="{% static 'main/css/style.css' %}" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+</head>
+
+
+<header class="header">
+
+    <div class="overlay has-fade"></div>
+    <nav class="container container--pall flex flex-jc-sb flex-ai-c">
+
+        <a href="#" id="btnHamburger" class="header__toggle hide-for-desktop">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+
+        <div class="header__links hide-for-mobile">
+            <a href="/">Home</a>
+            <a href="/">One</a>
+            <a href="/">Two</a>
+            <a href="/">Three</a>
+            <a href="/">Four</a>
+        </div>
+
+    </nav>
+
+    <div class="header__menu has-fade">
+        <a href="/">Home</a>
+        <a href="/">One</a>
+        <a href="/">Two</a>
+        <a href="/">Three</a>
+        <a href="/">Four</a>
+    </div>
+
+</header>
+
+<body>
+
+    <!-- This references to all of the other pages -->
+    {% block content %}
+    {% endblock %} 
+    
+    {% include "main/includes/footer.html" %}
+
+    <script src="{% static 'main/js/script.js' %}"></script>
+
+</body>
+
+</html>

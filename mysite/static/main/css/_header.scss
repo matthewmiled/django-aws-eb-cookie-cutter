@@ -1,0 +1,154 @@
+.header {
+    position: relative;
+    z-index: 1;
+    background-color: $lightGrey;
+
+
+    /* This for the animation when the hamburger menu is clicked on */
+    &.open {
+        
+        /* Overlay is placed over the body */
+        .overlay {
+            display: block;
+        }
+
+        /* And burger icon animates */
+        .header__toggle {
+
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+
+    }
+
+    /* **** The overlay that displays over the page when the mobile menu is activated **** */
+
+    .overlay {
+        visibility: hidden;
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-image: linear-gradient($lightGrey, $white);
+    }
+
+    nav {
+        position: relative;
+        background-color: $lightGrey; 
+        padding-top: 1.0625rem;
+        padding-bottom: 1.0625rem;
+        height: 5rem;
+        
+    }
+
+    /* logo within the header (header__logo) */
+    %__logo {
+
+        img {
+            width: 8.8125rem;
+            height: 1.375rem;
+        }
+    }
+
+    /* Hamburger mobile menu (header__toggle) within the header -> each span is one of the lines in the menu icon */
+    &__toggle {  
+        > span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $navy;
+            transform-origin: 3px 1px;
+            transition: 300ms all ease-in-out;
+
+            /* Want to add bottom spacing to all the hamburger icon lines apart from the bottom one */
+
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+
+
+    }
+
+    /* Mobile menu link */
+    &__menu {
+        position: absolute;
+        width: calc(100% - 3rem);
+        left: 50%;
+        transform: translateX(-50%);
+        background: $lightGrey;
+        margin-top: 1.5rem;
+        padding: 1.625rem;
+        border-radius: 5px;
+
+
+        a {
+            display: block;
+            color: $navy;
+            padding: 0.625rem;
+            text-align: center;
+
+        }
+    }
+
+
+    /* Links for full size navbar */
+    &__links {
+        
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        a {
+            position: relative;
+            font-size: $font-small;
+            color: $navy;
+            transition: color 300ms ease-in-out;
+
+            
+
+            /* Want to add a bit of space to the right of the links, but not the last link */
+            &:not(:last-child){
+                margin-right: 32px;
+            }
+
+            /* This is so the bottom of navar has a color when you hover over a specific link */
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 1.5px;
+                left: 0;
+                right: 0;
+                bottom: -25px;
+                background: linear-gradient(to right, $cyanGrey, $cyanGrey);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+                
+
+            }
+
+            &:hover{
+                color: black;
+
+                &::before{
+                    background: linear-gradient(to right, $cyanGrey, $cyanGrey);
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+
+}
+

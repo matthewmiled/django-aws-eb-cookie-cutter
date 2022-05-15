@@ -1,0 +1,100 @@
+.post {
+    background-color: $lightGrey;
+
+
+    &__top {
+        border-bottom: 1px $navyGrey solid;
+
+        h1 {
+            font-weight: bold;
+        }
+    }
+
+    &__intro {
+        margin-bottom: 0rem;
+    }
+
+    &__date {
+        font-size: 0.9rem;
+        color: $navyGrey;
+    }
+
+    &__grid {
+
+        @include breakpoint-up(medium){
+            display: flex;
+            /* flex-wrap: wrap; */
+        }
+
+    }
+
+    &__maincontent {
+        flex: 1;
+        
+        h4 {
+            font-weight: bold;
+            color: $cyanGrey;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        
+        li {
+            margin-bottom: 1rem;
+        }
+
+        @include breakpoint-up(medium){
+            flex: 0.6;
+        }
+
+        @include breakpoint-up(large){
+            flex: 0.6;
+        }
+
+    }
+
+    &__sidecontent {
+        flex: 1;
+        
+
+        @include breakpoint-up(medium){
+            flex: 0.4;
+        }
+
+        @include breakpoint-up(large){
+            flex: 0.4;
+        }
+
+    }
+
+    &__sideitem {
+        border-radius: 0.3125rem;
+        overflow: hidden;
+        box-shadow: 0px 3px 12px rgba(0,0,0,0.15);
+        transition: all 150ms ease-in-out;
+        margin-bottom: 0.9375rem;
+        
+
+        @include breakpoint-up(medium){
+            width: 80%;
+            position: relative;
+            left: 3rem;
+            top: 1rem;
+        }
+        
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+    }
+
+    &__aboutimage {
+        background-image: url('images/display_pic.jpeg');
+        height: 10rem;
+    }
+
+
+}

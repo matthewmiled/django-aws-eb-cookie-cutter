@@ -1,0 +1,19 @@
+// Defining colours as variables so we can reuse them
+
+// Color palette: https://coolors.co/123c69-445c76-45a29e-f1efef-fafafa
+
+$navy: #123C69;
+$navyGrey: #445C76;
+$lightGrey: #FAFAFA;
+$lightishGrey: #f1efef;
+$cyanGrey: #45A29E;
+
+$white: hsl(0, 0%, 100%);
+
+// Font sizes - Convert pixels to rems by dividing by 16
+
+$font-med: 1.125rem; // 18px
+$font-small: 0.875rem; // 14px
+$font-lg: 1.25rem;
+$font-xlg: 3.25rem; 
+

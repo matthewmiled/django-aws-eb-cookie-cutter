@@ -1,31 +1,44 @@
+
+{% extends "main/header.html" %} 
+
+{% block content %}
+
 {% load static %}
 
-<head>
-    <title>MatthewMiles</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    
-    <link href="{% static 'main/css/style.css' %}" rel="stylesheet" type="text/css" />
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   
-  </head>
-  
+<body>
 
+  <section class="hero">
+    <div class="container">
+  
+      <div class="hero__text container--pall">
+        <h1>Header</h1>
+        <p>
+          Hello World!
+        </p>
 
-<section class="articles">
+        <p style="color: #445C76">
+          Connect on:
+        </p>
+
+        <a class="rounded-button" href="/" target="_blank">
+          <div class="fa fa-linkedin"></div>
+        </a>
+        
+        <a class="rounded-button" href="/" target="_blank">
+          <div class="fa fa-github"></div>
+        </a>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section class="articles">
     <div class="article__content container container--pall">
       <h2>Featured Articles</h2>
 
       <div class="article__grid">
-
         {% for post in all_projects %}
-
         <a href="{{post.project_slug}}" class="article__item">
           <div class="article__image">
             <img src="{{ post.project_image.url }}" class="article__test">
@@ -47,4 +60,11 @@
 
       </div>
     </div>
-</section>
+  </section>
+
+
+</body>
+
+{% endblock %}
+
+
