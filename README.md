@@ -21,38 +21,41 @@ This seems to be an issue I’ve only experienced with AWS EB, and the easiest w
 
 2. Once all packages are successfully installed, add a file called config.json to the second level mysite directory (same level as settings.py). Within this file, add the following json:
 
-```{
-
+```
+{
     "SECRET_KEY": “<a random string that you decide>”,
     
     "DEBUG": 1,
     
-    "ALLOWED_HOSTS": ["127.0.0.1", ""]
-    
-}```
- 
+    "ALLOWED_HOSTS": ["127.0.0.1", ""] 
+}
+```
 
 Whilst in development, keep DEBUG to 1. Once deployed, this should be changed to 0. We will come back to what should be populated within the ALLOWED_HOSTS.
 
 If you have decided to rename your project to something other than mysite, then the snippet below that is found in .ebextensions > django.config should also be updated:
 
-`option_settings:
+```
+option_settings:
 
   aws:elasticbeanstalk:container:python:
   
-    WSGIPath: <your_name>.wsgi:application`
+    WSGIPath: <your_name>.wsgi:application
+```
     
 3. If you have not installed the EB CLI, follow the instructions in the AWS GitHub repo.
 
 Then run the following commands in the mysite directory level (same level as the .ebextensions folder is located). Note that this has been pulled from the AWS documentation.
 
-`eb init -p python-3.8 django-tutorial`
+```
+eb init -p python-3.8 django-tutorial
 
-`## Replace django-tutorial with whatever you want your EB application to be called.`
+## Replace django-tutorial with whatever you want your EB application to be called.
 
-`eb create django-env`
+eb create django-env
 
-`## Replace django-env with whatever you want your EB environment to be called.`
+## Replace django-env with whatever you want your EB environment to be called.
+```
 
 4. Navigate to the AWS Elastic Beanstalk terminal in the web browser. You should see your environment created once the command has finished running, with a url to the right hand side.
 
