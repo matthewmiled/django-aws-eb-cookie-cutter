@@ -21,11 +21,15 @@ This seems to be an issue I’ve only experienced with AWS EB, and the easiest w
 
 2. Once all packages are successfully installed, add a file called config.json to the second level mysite directory (same level as settings.py). Within this file, add the following json:
 
-`{`
-    `"SECRET_KEY": “<a random string that you decide>”,`
-    `"DEBUG": 1,`
-    `"ALLOWED_HOSTS": ["127.0.0.1", ""]`
-`}`
+`{
+
+    `"SECRET_KEY": “<a random string that you decide>”,
+    
+    `"DEBUG": 1,
+    
+    `"ALLOWED_HOSTS": ["127.0.0.1", ""]
+    
+}`
  
 
 Whilst in development, keep DEBUG to 1. Once deployed, this should be changed to 0. We will come back to what should be populated within the ALLOWED_HOSTS.
