@@ -23,11 +23,11 @@ This seems to be an issue I’ve only experienced with AWS EB, and the easiest w
 
 `{
 
-    `"SECRET_KEY": “<a random string that you decide>”,
+    "SECRET_KEY": “<a random string that you decide>”,
     
-    `"DEBUG": 1,
+    "DEBUG": 1,
     
-    `"ALLOWED_HOSTS": ["127.0.0.1", ""]
+    "ALLOWED_HOSTS": ["127.0.0.1", ""]
     
 }`
  
@@ -37,7 +37,9 @@ Whilst in development, keep DEBUG to 1. Once deployed, this should be changed to
 If you have decided to rename your project to something other than mysite, then the snippet below that is found in .ebextensions > django.config should also be updated:
 
 `option_settings:
+
   aws:elasticbeanstalk:container:python:
+  
     WSGIPath: <your_name>.wsgi:application`
     
 3. If you have not installed the EB CLI, follow the instructions in the AWS GitHub repo.
